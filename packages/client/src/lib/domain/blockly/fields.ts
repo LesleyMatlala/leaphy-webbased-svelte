@@ -1,3 +1,4 @@
+
 import { type FieldConfig, FieldDropdown } from "blockly";
 import { PinMapping, type RobotDevice } from "../robots";
 
@@ -76,10 +77,10 @@ export default class PinSelectorField extends FieldDropdown {
 					15,
 					"A",
 				);
-				PinSelectorField.pwmPinOptions = PinSelectorField.generatePinRange(
-					2,
-					13,
-				);
+				PinSelectorField.pwmPinOptions = [
+					... PinSelectorField.generatePinRange(2,13),
+					... PinSelectorField.pwmPinOptions (44,46),
+				];
 				break;
 			}
 		}
